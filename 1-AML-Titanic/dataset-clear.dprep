@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 39,
+  "id": "da738a0e-e43a-437f-9605-2bd141cfd284",
+  "activities": [
+    {
+      "id": "812320b6-6624-4627-8600-25426300452e",
+      "name": "dataset",
+      "blocks": [
+        {
+          "id": "f3d5a5f8-30b9-4ba7-9069-443272d0abec",
+          "type": "Microsoft.DPrep.ReferenceActivityBlock",
+          "arguments": {
+            "reference": {
+              "referenceType": 1,
+              "referenceContainerPath": "./dataset.dsource",
+              "referencedActivityId": "116d4d3f-7112-423a-b261-f4872587da00",
+              "referencedBranchId": null,
+              "referencedStep": null,
+              "anonymousSteps": null
+            }
+          }
+        },
+        {
+          "id": "d428b0e0-d7ac-4ff4-9cd4-8a0b806bc0be",
+          "type": "Microsoft.DPrep.ConvertColumnFieldTypeBlock",
+          "arguments": {
+            "columnIds": [
+              "MAX_ACCX"
+            ],
+            "decimalPoint": 0
+          }
+        },
+        {
+          "id": "1229b8ca-a009-4468-bb1d-0abfb4ed446c",
+          "type": "Microsoft.DPrep.ConvertColumnFieldTypeBlock",
+          "arguments": {
+            "columnIds": [
+              "MAX_ACCY"
+            ],
+            "decimalPoint": 0
+          }
+        },
+        {
+          "id": "738f6a4b-a341-4a03-ba0d-7564704e9837",
+          "type": "Microsoft.DPrep.ConvertColumnFieldTypeBlock",
+          "arguments": {
+            "columnIds": [
+              "MAX_ACCZ"
+            ],
+            "decimalPoint": 0
+          }
+        },
+        {
+          "id": "642bcbc8-0608-4496-b82c-ab4f62015b14",
+          "type": "Microsoft.DPrep.ConvertColumnFieldTypeBlock",
+          "arguments": {
+            "columnIds": [
+              "MAX_GYROX"
+            ],
+            "decimalPoint": 0
+          }
+        },
+        {
+          "id": "fbd877eb-e59e-48fb-9349-994b5dc5c606",
+          "type": "Microsoft.DPrep.ConvertColumnFieldTypeBlock",
+          "arguments": {
+            "columnIds": [
+              "MAX_GYROY"
+            ],
+            "decimalPoint": 0
+          }
+        },
+        {
+          "id": "e86a2387-6214-433e-8cb2-cc601fef977b",
+          "type": "Microsoft.DPrep.ConvertColumnFieldTypeBlock",
+          "arguments": {
+            "columnIds": [
+              "MAX_GYROZ"
+            ],
+            "decimalPoint": 0
+          }
+        },
+        {
+          "id": "e77fe3be-abcb-4554-94fb-5f6999fe9ff5",
+          "type": "Microsoft.DPrep.ConvertColumnFieldTypeBlock",
+          "arguments": {
+            "columnIds": [
+              "ACC_AVG"
+            ],
+            "decimalPoint": 0
+          }
+        },
+        {
+          "id": "75343bcf-516f-43d8-afc0-b42e9da8b79f",
+          "type": "Microsoft.DPrep.ConvertColumnFieldTypeBlock",
+          "arguments": {
+            "columnIds": [
+              "ACC_VAR"
+            ],
+            "decimalPoint": 0
+          }
+        },
+        {
+          "id": "314fd149-3417-474b-a55d-bd67745409ee",
+          "type": "Microsoft.DPrep.ConvertColumnFieldTypeBlock",
+          "arguments": {
+            "columnIds": [
+              "GYRO_AVG"
+            ],
+            "decimalPoint": 0
+          }
+        },
+        {
+          "id": "005b0217-cb8c-4cd4-b060-14db0dcf64d0",
+          "type": "Microsoft.DPrep.ConvertColumnFieldTypeBlock",
+          "arguments": {
+            "columnIds": [
+              "GYRO_VAR"
+            ],
+            "decimalPoint": 0
+          }
+        },
+        {
+          "id": "dbf61bad-228e-4e9b-8488-64a78e3402a0",
+          "type": "Microsoft.DPrep.DeleteColumnBlock",
+          "arguments": {
+            "columnIds": [
+              "STARTTIME"
+            ]
+          }
+        },
+        {
+          "id": "24dc6a53-a8b6-4ac7-8ff6-cabc63a51f6a",
+          "type": "Microsoft.DPrep.DeleteColumnBlock",
+          "arguments": {
+            "columnIds": [
+              "ENDTIME"
+            ]
+          }
+        },
+        {
+          "id": "3c9a1453-bfa8-4d4c-abd4-825eb570654f",
+          "type": "Microsoft.DPrep.ConvertColumnFieldTypeToStringBlock",
+          "arguments": {
+            "columnIds": [
+              "WILDNESS"
+            ]
+          }
+        },
+        {
+          "id": "02a73d8a-9b6f-4e03-978e-7c9b97041e25",
+          "type": "Microsoft.DPrep.ConvertColumnFieldTypeBlock",
+          "arguments": {
+            "columnIds": [
+              "WILDNESS"
+            ],
+            "decimalPoint": 0
+          }
+        },
+        {
+          "id": "dbc90e72-010d-451b-a706-c0bdc7345168",
+          "type": "Microsoft.DPrep.ConvertColumnFieldTypeToStringBlock",
+          "arguments": {
+            "columnIds": [
+              "WILDNESS"
+            ]
+          }
+        },
+        {
+          "id": "29925969-68e2-44ef-9451-4dc7de492b2f",
+          "type": "Microsoft.DPrep.ReplaceValuesBlock",
+          "arguments": {
+            "valueToFind": "1",
+            "replaceWith": "0",
+            "matchEntireCellContents": false,
+            "useSpecialCharacters": false,
+            "columnIds": [
+              "WILDNESS"
+            ],
+            "replaceWithNone": false
+          }
+        },
+        {
+          "id": "f271ecd1-f10a-494e-b831-cb311088c06b",
+          "type": "Microsoft.DPrep.ReplaceValuesBlock",
+          "arguments": {
+            "valueToFind": "5",
+            "replaceWith": "1",
+            "matchEntireCellContents": false,
+            "useSpecialCharacters": false,
+            "columnIds": [
+              "WILDNESS"
+            ],
+            "replaceWithNone": false
+          }
+        },
+        {
+          "id": "71575226-561a-4880-b7fa-36840e31b581",
+          "type": "Microsoft.DPrep.ConvertColumnFieldTypeToBoolBlock",
+          "arguments": {
+            "columnIds": [
+              "WILDNESS"
+            ],
+            "trueValues": [
+              "True",
+              "true",
+              "T",
+              "Yes",
+              "yes",
+              "Y",
+              "1"
+            ],
+            "falseValues": [
+              "False",
+              "false",
+              "F",
+              "No",
+              "no",
+              "N",
+              "0"
+            ],
+            "mismatchAs": 1
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "413e2c46-d51d-4531-a764-a06effec42b3",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "812320b6-6624-4627-8600-25426300452e",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": false
+        }
+      ]
+    }
+  ],
+  "runConfigurations": []
+}

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 39,
+  "id": "258eb60b-fe0e-4360-87df-9a393afca907",
+  "activities": [
+    {
+      "id": "116d4d3f-7112-423a-b261-f4872587da00",
+      "name": "dataset",
+      "blocks": [
+        {
+          "id": "1c394d52-ad60-4085-9666-f79212167368",
+          "type": "Microsoft.DPrep.DataSourceBlock",
+          "arguments": {
+            "path": {
+              "target": 0,
+              "resourceDetails": [
+                {
+                  "path": "C:\\Users\\f.baader\\Desktop\\AML-HaCarTUM\\data\\dataset.csv"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "717c8a82-7d1c-46d6-9b13-2af719372cfd",
+          "type": "Microsoft.DPrep.ParseDelimitedBlock",
+          "arguments": {
+            "preview": false,
+            "columnHeadersMode": 3,
+            "separator": ";",
+            "fileEncoding": 0,
+            "skipRowsMode": 0,
+            "handleQuotedLineBreaks": false
+          }
+        },
+        {
+          "id": "fb7c01a3-4991-4a5d-a445-da4220cd3bd1",
+          "type": "Microsoft.DPrep.SetColumnTypesBlock",
+          "arguments": {
+            "columnConversion": [
+              {
+                "columnId": "WILDNESS",
+                "typeProperty": 3,
+                "typeArguments": {}
+              }
+            ]
+          }
+        },
+        {
+          "id": "e38d268e-9b5b-4c46-be02-2a1d968f1fb8",
+          "type": "Microsoft.DPrep.SampleBlock",
+          "arguments": {
+            "samples": [
+              {
+                "sampleId": "9b688f91-0a0d-4d18-ad30-a5afb56d534a",
+                "sampleRevision": "7b00e456-7947-478c-94c4-43594f24126c",
+                "sampleName": "Top 10000",
+                "sampleRunner": {
+                  "id": null,
+                  "type": 0
+                },
+                "remoteGeneratorProperties": {},
+                "sampleStrategy": 0,
+                "topArguments": {
+                  "sampleCount": 10000
+                },
+                "randomNArguments": {
+                  "sampleCount": 10000
+                },
+                "randomPercentArguments": {
+                  "probability": 0.1
+                },
+                "allowAutoGen": true,
+                "isDisabled": false
+              }
+            ],
+            "activeSample": "9b688f91-0a0d-4d18-ad30-a5afb56d534a"
+          }
+        },
+        {
+          "id": "7cd801a4-82a9-452a-b046-66078b3680ed",
+          "type": "Microsoft.DPrep.HandlePathColumnBlock",
+          "arguments": {
+            "pathColumnOperation": 0
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "333906d5-3372-47e2-b842-e035655aac25",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "116d4d3f-7112-423a-b261-f4872587da00",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": false
+        },
+        {
+          "id": "8296f4d0-5faf-4a79-8e22-5f4ee211112e",
+          "type": "Microsoft.DPrep.DataProfileInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "116d4d3f-7112-423a-b261-f4872587da00",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 0,
+              "referencedStepId": "7cd801a4-82a9-452a-b046-66078b3680ed",
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": true
+        }
+      ]
+    }
+  ],
+  "runConfigurations": []
+}
